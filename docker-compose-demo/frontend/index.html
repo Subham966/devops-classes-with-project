@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frontend App</title>
+  <script>
+    async function fetchMessage() {
+      const res = await fetch('http://localhost:5000/api');
+      const data = await res.json();
+      document.getElementById("msg").innerText = data.message;
+    }
+    window.onload = fetchMessage;
+  </script>
+</head>
+<body>
+  <h1>🚀 Frontend App</h1>
+  <p id="msg">Loading message from backend...</p>
+</body>
+</html>
